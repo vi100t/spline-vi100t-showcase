@@ -10,32 +10,39 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden">
-      {/* Spline 3D Background */}
-      <div className="absolute inset-0 w-full h-full">
+    <section id="hero" className="min-h-screen relative flex flex-col overflow-hidden">
+      {/* Spline 3D Background - Centered */}
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center">
         <iframe
           src="https://my.spline.design/3dtextbluecopy-7byaYgFxRsJ1rue28iECHM6q/"
           frameBorder="0"
           width="100%"
           height="100%"
-          className="w-full h-full"
+          className="w-full h-full object-center"
           title="3D Background"
+          style={{ transform: 'scale(1)', transformOrigin: 'center center' }}
         />
       </div>
 
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-primary/30 backdrop-blur-[1px]" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+      {/* Top Content - Name */}
+      <div className="relative z-10 flex-1 flex items-start justify-center pt-20">
+        <div className="text-center px-4 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
             Vicente
           </h1>
-          <h2 className="text-xl md:text-2xl text-white/90 mb-8 font-medium">
+          <h2 className="text-xl md:text-2xl text-white/90 font-medium">
             Full Stack Developer
           </h2>
-          <p className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+        </div>
+      </div>
+
+      {/* Bottom Content - Info, CTA, Social Links */}
+      <div className="relative z-10 flex flex-col items-center justify-end pb-20 px-4">
+        <div className="text-center max-w-2xl mx-auto animate-fade-in">
+          <p className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed">
             Passionate about creating innovative web solutions with modern technologies. 
             Specializing in React, Node.js, and cloud architecture.
           </p>
@@ -89,7 +96,7 @@ const HeroSection = () => {
         {/* Scroll Indicator */}
         <button
           onClick={scrollToNextSection}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/80 hover:text-accent transition-colors duration-200 animate-float"
+          className="text-white/80 hover:text-accent transition-colors duration-200 animate-float"
         >
           <ArrowDown size={32} />
         </button>
