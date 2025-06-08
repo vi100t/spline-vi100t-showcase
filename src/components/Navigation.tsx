@@ -36,8 +36,8 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">
-            Victor
+          <div className="text-2xl font-bold text-accent">
+            Vicente
           </div>
 
           {/* Desktop Navigation */}
@@ -46,7 +46,7 @@ const Navigation = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200"
+                className="text-foreground hover:text-accent transition-colors duration-200"
               >
                 {item.label}
               </button>
@@ -72,7 +72,7 @@ const Navigation = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-foreground hover:text-primary transition-colors duration-200"
+                  className="text-left text-foreground hover:text-accent transition-colors duration-200"
                 >
                   {item.label}
                 </button>

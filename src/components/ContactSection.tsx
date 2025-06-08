@@ -43,8 +43,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'contact@victor.dev',
-      href: 'mailto:contact@victor.dev'
+      value: 'dovallevicente@gmail.com',
+      href: 'mailto:dovallevicente@gmail.com'
     },
     {
       icon: Linkedin,
@@ -55,8 +55,8 @@ const ContactSection = () => {
     {
       icon: Github,
       label: 'GitHub',
-      value: 'github.com/victor',
-      href: 'https://github.com'
+      value: 'github.com/vi100t',
+      href: 'https://github.com/vi100t'
     },
     {
       icon: MapPin,
@@ -82,7 +82,7 @@ const ContactSection = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="p-8">
+            <Card className="p-8 border-accent/20">
               <h3 className="text-2xl font-semibold text-foreground mb-6">
                 Send me a message
               </h3>
@@ -97,6 +97,7 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="Your name"
+                      className="border-accent/20 focus:border-accent"
                     />
                   </div>
                   <div className="space-y-2">
@@ -109,6 +110,7 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="your.email@example.com"
+                      className="border-accent/20 focus:border-accent"
                     />
                   </div>
                 </div>
@@ -121,6 +123,7 @@ const ContactSection = () => {
                     onChange={handleInputChange}
                     required
                     placeholder="What's this about?"
+                    className="border-accent/20 focus:border-accent"
                   />
                 </div>
                 <div className="space-y-2">
@@ -133,9 +136,10 @@ const ContactSection = () => {
                     required
                     placeholder="Tell me about your project..."
                     rows={6}
+                    className="border-accent/20 focus:border-accent"
                   />
                 </div>
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-primary" disabled={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
@@ -143,7 +147,7 @@ const ContactSection = () => {
 
             {/* Contact Information */}
             <div className="space-y-8">
-              <Card className="p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+              <Card className="p-8 bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20">
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
                   Get in touch
                 </h3>
@@ -155,7 +159,7 @@ const ContactSection = () => {
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-center space-x-4">
-                      <div className="text-primary">
+                      <div className="text-accent">
                         <info.icon size={20} />
                       </div>
                       <div>
@@ -165,7 +169,7 @@ const ContactSection = () => {
                             href={info.href}
                             target={info.href.startsWith('http') ? '_blank' : undefined}
                             rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                            className="text-foreground hover:text-primary transition-colors duration-200"
+                            className="text-foreground hover:text-accent transition-colors duration-200"
                           >
                             {info.value}
                           </a>
@@ -178,7 +182,7 @@ const ContactSection = () => {
                 </div>
               </Card>
 
-              <Card className="p-8 text-center">
+              <Card className="p-8 text-center border-accent/20">
                 <h4 className="text-lg font-semibold text-foreground mb-4">
                   Open to Opportunities
                 </h4>
@@ -186,8 +190,8 @@ const ContactSection = () => {
                   I'm currently available for freelance projects and full-time opportunities. 
                   Let's discuss how we can work together.
                 </p>
-                <Button className="w-full" asChild>
-                  <a href="mailto:contact@victor.dev">
+                <Button className="w-full bg-accent hover:bg-accent/90 text-primary" asChild>
+                  <a href="mailto:dovallevicente@gmail.com">
                     <Mail className="w-4 h-4 mr-2" />
                     Start a Conversation
                   </a>
@@ -202,7 +206,7 @@ const ContactSection = () => {
       <footer className="mt-20 pt-8 border-t border-border">
         <div className="text-center">
           <p className="text-muted-foreground">
-            © 2024 Victor. Built with React, TypeScript, and lots of ☕
+            © 2024 Vicente. Built with React, TypeScript, and lots of ☕
           </p>
         </div>
       </footer>
