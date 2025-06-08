@@ -10,96 +10,98 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen relative flex flex-col overflow-hidden">
-      {/* Spline 3D Background - Centered */}
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+    <section id="hero" className="min-h-screen relative flex overflow-hidden">
+      {/* Spline 3D Background - Full Screen */}
+      <div className="absolute inset-0 w-full h-full">
         <iframe
           src="https://my.spline.design/3dtextbluecopy-7byaYgFxRsJ1rue28iECHM6q/"
           frameBorder="0"
           width="100%"
           height="100%"
-          className="w-full h-full object-center"
+          className="w-full h-full"
           title="3D Background"
-          style={{ transform: 'scale(1)', transformOrigin: 'center center' }}
         />
       </div>
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-primary/30 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-primary/20 backdrop-blur-[1px]" />
 
-      {/* Top Content - Name */}
-      <div className="relative z-10 flex-1 flex items-start justify-center pt-20">
-        <div className="text-center px-4 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
-            Vicente
-          </h1>
-          <h2 className="text-xl md:text-2xl text-white/90 font-medium">
-            Full Stack Developer
-          </h2>
-        </div>
-      </div>
-
-      {/* Bottom Content - Info, CTA, Social Links */}
-      <div className="relative z-10 flex flex-col items-center justify-end pb-20 px-4">
-        <div className="text-center max-w-2xl mx-auto animate-fade-in">
-          <p className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed">
-            Passionate about creating innovative web solutions with modern technologies. 
-            Specializing in React, Node.js, and cloud architecture.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button
-              size="lg"
-              className="bg-accent text-primary hover:bg-accent/90 font-medium px-8 py-3"
-              onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View My Work
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-accent text-accent hover:bg-accent hover:text-primary font-medium px-8 py-3"
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get In Touch
-            </Button>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-16">
-            <a
-              href="https://www.linkedin.com/in/vi100t/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/80 hover:text-accent transition-colors duration-200"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="https://github.com/vi100t"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/80 hover:text-accent transition-colors duration-200"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="mailto:dovallevicente@gmail.com"
-              className="text-white/80 hover:text-accent transition-colors duration-200"
-            >
-              <Mail size={24} />
-            </a>
+      {/* Right Side Content */}
+      <div className="relative z-10 flex flex-col justify-between ml-auto w-full md:w-1/2 lg:w-2/5 p-8 md:p-12">
+        {/* Top Content - Name */}
+        <div className="flex-1 flex items-start justify-center pt-20">
+          <div className="text-center animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+              Vicente
+            </h1>
+            <h2 className="text-xl md:text-2xl text-white/90 font-medium">
+              Full Stack Developer
+            </h2>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <button
-          onClick={scrollToNextSection}
-          className="text-white/80 hover:text-accent transition-colors duration-200 animate-float"
-        >
-          <ArrowDown size={32} />
-        </button>
+        {/* Bottom Content - Info, CTA, Social Links */}
+        <div className="flex flex-col items-center justify-end pb-20">
+          <div className="text-center max-w-2xl animate-fade-in">
+            <p className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed">
+              Passionate about creating innovative web solutions with modern technologies. 
+              Specializing in React, Node.js, and cloud architecture.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button
+                size="lg"
+                className="bg-accent text-primary hover:bg-accent/90 font-medium px-8 py-3"
+                onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                View My Work
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-accent text-accent hover:bg-accent hover:text-primary font-medium px-8 py-3"
+                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Get In Touch
+              </Button>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex justify-center space-x-6 mb-16">
+              <a
+                href="https://www.linkedin.com/in/vi100t/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-accent transition-colors duration-200"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="https://github.com/vi100t"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-accent transition-colors duration-200"
+              >
+                <Github size={24} />
+              </a>
+              <a
+                href="mailto:dovallevicente@gmail.com"
+                className="text-white/80 hover:text-accent transition-colors duration-200"
+              >
+                <Mail size={24} />
+              </a>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <button
+            onClick={scrollToNextSection}
+            className="text-white/80 hover:text-accent transition-colors duration-200 animate-float"
+          >
+            <ArrowDown size={32} />
+          </button>
+        </div>
       </div>
     </section>
   );
