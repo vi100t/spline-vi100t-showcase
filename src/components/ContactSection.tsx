@@ -1,26 +1,27 @@
-
-import React, { useState } from 'react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
-import { Mail, Linkedin, Github, MapPin, Phone } from 'lucide-react';
+import React, { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { Mail, Linkedin, Github, MapPin, Phone } from "lucide-react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,55 +29,56 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
       title: "Message sent!",
       description: "Thank you for reaching out. I'll get back to you soon.",
     });
 
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: "", email: "", subject: "", message: "" });
     setIsSubmitting(false);
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'dovallevicente@gmail.com',
-      href: 'mailto:dovallevicente@gmail.com'
+      label: "Email",
+      value: "dovallevicente@gmail.com",
+      href: "mailto:dovallevicente@gmail.com",
     },
     {
       icon: Linkedin,
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/vi100t',
-      href: 'https://www.linkedin.com/in/vi100t/'
+      label: "LinkedIn",
+      value: "linkedin.com/in/vi100t",
+      href: "https://www.linkedin.com/in/vi100t/",
     },
     {
       icon: Github,
-      label: 'GitHub',
-      value: 'github.com/vi100t',
-      href: 'https://github.com/vi100t'
+      label: "GitHub",
+      value: "github.com/vi100t",
+      href: "https://github.com/vi100t",
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'Available Remotely',
-      href: null
-    }
+      label: "Location",
+      value: "Available Remotely",
+      href: null,
+    },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-20 bg-backgroundSpline">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white/90 mb-6">
               Let's Work Together
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Ready to bring your ideas to life? I'm always excited to discuss new projects 
-              and opportunities. Let's create something amazing together.
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Ready to bring your ideas to life? I'm always excited to discuss
+              new projects and opportunities. Let's create something amazing
+              together.
             </p>
           </div>
 
@@ -139,21 +141,26 @@ const ContactSection = () => {
                     className="border-accent/20 focus:border-accent"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-primary" disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                <Button
+                  type="submit"
+                  className="w-full bg-accent hover:bg-accent/90 text-primary"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </Card>
 
             {/* Contact Information */}
             <div className="space-y-8">
-              <Card className="p-8 bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20">
+              <Card className="p-8 border-accent/20">
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
                   Get in touch
                 </h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                  Whether you have a project in mind, want to collaborate, or just want to say hello, 
-                  I'd love to hear from you. Feel free to reach out through any of these channels.
+                  Whether you have a project in mind, want to collaborate, or
+                  just want to say hello, I'd love to hear from you. Feel free
+                  to reach out through any of these channels.
                 </p>
 
                 <div className="space-y-4">
@@ -163,12 +170,22 @@ const ContactSection = () => {
                         <info.icon size={20} />
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground">{info.label}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {info.label}
+                        </p>
                         {info.href ? (
                           <a
                             href={info.href}
-                            target={info.href.startsWith('http') ? '_blank' : undefined}
-                            rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            target={
+                              info.href.startsWith("http")
+                                ? "_blank"
+                                : undefined
+                            }
+                            rel={
+                              info.href.startsWith("http")
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
                             className="text-foreground hover:text-accent transition-colors duration-200"
                           >
                             {info.value}
@@ -187,10 +204,13 @@ const ContactSection = () => {
                   Open to Opportunities
                 </h4>
                 <p className="text-muted-foreground mb-6">
-                  I'm currently available for freelance projects and full-time opportunities. 
-                  Let's discuss how we can work together.
+                  I'm currently available for freelance projects and full-time
+                  opportunities. Let's discuss how we can work together.
                 </p>
-                <Button className="w-full bg-accent hover:bg-accent/90 text-primary" asChild>
+                <Button
+                  className="w-full bg-accent hover:bg-accent/90 text-primary"
+                  asChild
+                >
                   <a href="mailto:dovallevicente@gmail.com">
                     <Mail className="w-4 h-4 mr-2" />
                     Start a Conversation
@@ -205,7 +225,7 @@ const ContactSection = () => {
       {/* Footer */}
       <footer className="mt-20 pt-8 border-t border-border">
         <div className="text-center">
-          <p className="text-muted-foreground">
+          <p className="text-white/80">
             © 2024 Vicente. Built with React, TypeScript, and lots of ☕
           </p>
         </div>

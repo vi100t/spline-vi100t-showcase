@@ -1,57 +1,92 @@
-
-import React from 'react';
-import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import React from "react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: "Frontend",
       skills: [
-        'React', 'TypeScript', 'Next.js', 'Vue.js', 'HTML5', 'CSS3', 
-        'Tailwind CSS', 'Sass', 'JavaScript', 'Redux', 'Zustand'
-      ]
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Vue.js",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Sass",
+        "JavaScript",
+        "Redux",
+        "Zustand",
+      ],
     },
     {
-      title: 'Backend',
+      title: "Backend",
       skills: [
-        'Node.js', 'Express.js', 'Python', 'FastAPI', 'PostgreSQL', 
-        'MongoDB', 'Redis', 'GraphQL', 'REST APIs', 'Prisma'
-      ]
+        "Node.js",
+        "Express.js",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "GraphQL",
+        "REST APIs",
+        "Prisma",
+      ],
     },
     {
-      title: 'DevOps & Tools',
+      title: "DevOps & Tools",
       skills: [
-        'Docker', 'AWS', 'Vercel', 'Git', 'GitHub Actions', 'CI/CD', 
-        'Linux', 'Nginx', 'Jest', 'Cypress', 'Webpack', 'Vite'
-      ]
+        "Docker",
+        "AWS",
+        "Vercel",
+        "Git",
+        "GitHub Actions",
+        "CI/CD",
+        "Linux",
+        "Nginx",
+        "Jest",
+        "Cypress",
+        "Webpack",
+        "Vite",
+      ],
     },
     {
-      title: 'Other',
+      title: "Other",
       skills: [
-        'Figma', 'Adobe Creative Suite', 'Agile', 'Scrum', 'Team Leadership', 
-        'Code Review', 'Technical Writing', 'UI/UX Design'
-      ]
-    }
+        "Figma",
+        "Adobe Creative Suite",
+        "Agile",
+        "Scrum",
+        "Team Leadership",
+        "Code Review",
+        "Technical Writing",
+        "UI/UX Design",
+      ],
+    },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-background">
+    <section id="skills" className="py-20 bg-backgroundSpline">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white/90 mb-6">
               Skills & Technologies
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A comprehensive toolkit for building modern web applications, 
-              from frontend interfaces to backend systems and everything in between.
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              A comprehensive toolkit for building modern web applications, from
+              frontend interfaces to backend systems and everything in between.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <Card
+                key={index}
+                className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
                 <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
                   {category.title}
                 </h3>
@@ -76,9 +111,10 @@ const SkillsSection = () => {
                 Always Learning
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Technology evolves rapidly, and so do I. I'm constantly exploring new tools, 
-                frameworks, and methodologies to stay at the forefront of web development. 
-                Currently diving deeper into AI/ML integration and Web3 technologies.
+                Technology evolves rapidly, and so do I. I'm constantly
+                exploring new tools, frameworks, and methodologies to stay at
+                the forefront of web development. Currently diving deeper into
+                AI/ML integration and Web3 technologies.
               </p>
             </Card>
           </div>

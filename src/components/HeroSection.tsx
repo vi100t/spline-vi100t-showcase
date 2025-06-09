@@ -1,51 +1,59 @@
-
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import React, { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToNextSection = () => {
-    const aboutSection = document.querySelector('#about');
-    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+    const aboutSection = document.querySelector("#about");
+    aboutSection?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    // Add the Spline viewer script
+    const script = document.createElement("script");
+    script.type = "module";
+    script.src =
+      "https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on component unmount
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <section id="hero" className="min-h-screen relative flex overflow-hidden">
       {/* Spline 3D Background - Full Screen */}
       <div className="absolute inset-0 w-full h-full">
-        <iframe
-          src="https://my.spline.design/3dtextbluecopy-7byaYgFxRsJ1rue28iECHM6q/"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          className="w-full h-full"
-          title="3D Background"
-        />
+        <spline-viewer
+          url="https://prod.spline.design/gxF0afQYLvbdiYoT/scene.splinecode"
+          loading-anim-type="spinner-small-dark"
+          style={{ width: "100%", height: "100%" }}
+        ></spline-viewer>
       </div>
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-primary/20 backdrop-blur-[1px]" />
+      {/* <div className="absolute inset-0 bg-primary/20 backdrop-blur-[1px]" /> */}
 
       {/* Right Side Content */}
       <div className="relative z-10 flex flex-col justify-between ml-auto w-full md:w-1/2 lg:w-2/5 p-8 md:p-12">
         {/* Top Content - Name */}
         <div className="flex-1 flex items-start justify-center pt-20">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
-              Vicente
-            </h1>
-            <h2 className="text-xl md:text-2xl text-white/90 font-medium">
-              Full Stack Developer
-            </h2>
-          </div>
+          <div className="text-center animate-fade-in"></div>
         </div>
 
         {/* Bottom Content - Info, CTA, Social Links */}
         <div className="flex flex-col items-center justify-end pb-20">
-          <div className="text-center max-w-2xl animate-fade-in">
+          <div className="flex flex-col text-center max-w-2xl animate-fade-in gap-4">
+            <h2 className="text-3xl md:text-3xl text-white/90 font-medium">
+              Full Stack Developer
+            </h2>
             <p className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed">
-              Passionate about creating innovative web solutions with modern technologies. 
-              Specializing in React, Node.js, and cloud architecture.
+              Passionate about creating innovative web solutions with modern
+              technologies. Specializing in React, Node.js, and cloud
+              architecture.
             </p>
 
             {/* CTA Buttons */}
@@ -53,15 +61,23 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="bg-accent text-primary hover:bg-accent/90 font-medium px-8 py-3"
-                onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .querySelector("#projects")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 View My Work
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-accent text-accent hover:bg-accent hover:text-primary font-medium px-8 py-3"
-                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-primary hover:bg-accent hover:border-accent hover:text-primary font-medium px-8 py-3"
+                onClick={() =>
+                  document
+                    .querySelector("#contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Get In Touch
               </Button>
@@ -97,7 +113,7 @@ const HeroSection = () => {
           {/* Scroll Indicator */}
           <button
             onClick={scrollToNextSection}
-            className="text-white/80 hover:text-accent transition-colors duration-200 animate-float"
+            className="text-white/80 hover:text-accent transition-colors duration-350 animate-float"
           >
             <ArrowDown size={32} />
           </button>
