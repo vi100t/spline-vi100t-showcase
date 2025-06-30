@@ -62,7 +62,7 @@ const HeroSection = () => {
         {/* <div className="absolute inset-0 bg-primary/20 backdrop-blur-[1px]" /> */}
 
         {/* Right Side Content */}
-        <div className="relative z-10 flex flex-col justify-between ml-auto w-full md:w-1/2 lg:w-2/5 p-8 md:p-12">
+        <div className="relative z-10 flex flex-col justify-between ml-auto w-full md:w-1/2 lg:w-2/5 p-8 md:p-12 md:bg-transparent bg-backgroundSpline">
           {/* Top Content - Name */}
           <div className="flex-1 flex items-start justify-center pt-20">
             <div className="text-center animate-fade-in"></div>
