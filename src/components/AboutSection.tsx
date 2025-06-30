@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { Code2, Users, Zap, Target } from "lucide-react";
+import { Code2, Users, Zap, Target, SmileIcon } from "lucide-react";
 
 const AboutSection = () => {
   const highlights = [
@@ -24,6 +24,11 @@ const AboutSection = () => {
       icon: Target,
       title: "Goal Oriented",
       description: "Focused on delivering results that matter to the business.",
+    },
+    {
+      icon: SmileIcon,
+      title: "Having Fun",
+      description: "Making the whole develepment process a breeze.",
     },
   ];
 
@@ -87,9 +92,9 @@ const AboutSection = () => {
               When I'm not coding...
             </h3>
             <p className="text-white/80 max-w-2xl mx-auto leading-relaxed">
-              I enjoy exploring new technologies, contributing to open source
-              projects, and sharing knowledge with the developer community. I
-              also love photography, hiking, and discovering new coffee shops.
+              I enjoy exploring new technologies, developing apps that i wanna
+              use, and sharing knowledge with the developer community. I also
+              love making music, dancing, and playing football ⚽.
             </p>
           </div>
         </div>

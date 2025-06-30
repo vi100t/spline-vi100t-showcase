@@ -7,15 +7,17 @@ const SkillsSection = () => {
     {
       title: "Frontend",
       skills: [
+        "Angular",
         "React",
+        "React Native",
         "TypeScript",
+        "JavaScript",
         "Next.js",
-        "Vue.js",
         "HTML5",
         "CSS3",
         "Tailwind CSS",
+        "Styled Components",
         "Sass",
-        "JavaScript",
         "Redux",
         "Zustand",
       ],
@@ -23,16 +25,20 @@ const SkillsSection = () => {
     {
       title: "Backend",
       skills: [
+        "C#",
+        ".NET ASP",
+        ".NET CORE",
+        "Entity",
         "Node.js",
         "Express.js",
-        "Python",
-        "FastAPI",
         "PostgreSQL",
+        "SQLite",
+        "SQL Server",
         "MongoDB",
         "Redis",
-        "GraphQL",
         "REST APIs",
         "Prisma",
+        "Supabase",
       ],
     },
     {
@@ -40,6 +46,7 @@ const SkillsSection = () => {
       skills: [
         "Docker",
         "AWS",
+        "Google Cloud",
         "Vercel",
         "Git",
         "GitHub Actions",
@@ -50,13 +57,14 @@ const SkillsSection = () => {
         "Cypress",
         "Webpack",
         "Vite",
+        "Expo",
       ],
     },
     {
       title: "Other",
       skills: [
+        "Spline",
         "Figma",
-        "Adobe Creative Suite",
         "Agile",
         "Scrum",
         "Team Leadership",
@@ -114,7 +122,7 @@ const SkillsSection = () => {
                 Technology evolves rapidly, and so do I. I'm constantly
                 exploring new tools, frameworks, and methodologies to stay at
                 the forefront of web development. Currently diving deeper into
-                AI/ML integration and Web3 technologies.
+                AI/ML integration and cloud solutions.
               </p>
             </Card>
           </div>

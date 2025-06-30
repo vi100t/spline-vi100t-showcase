@@ -15,7 +15,7 @@ const ProjectsSection = () => {
         "React",
         "TypeScript",
         "Tailwind CSS",
-        "Next.js",
+        "Vite",
         "Responsive Design",
       ],
       liveUrl: "https://casaamarelapiaui.com",
@@ -23,43 +23,11 @@ const ProjectsSection = () => {
       featured: true,
     },
     {
-      title: "E-Commerce Platform",
+      title: "CometSwingAI App",
       description:
-        "A full-stack e-commerce solution with modern UI, payment integration, and admin dashboard. Built with React, Node.js, and PostgreSQL.",
+        "An all-in-one productivity app for to-dos, notes, calendar and more all powered with AI! Soon in the Apple Store",
       image: "/placeholder.svg",
-      technologies: [
-        "React",
-        "Node.js",
-        "PostgreSQL",
-        "Stripe",
-        "Tailwind CSS",
-      ],
-      liveUrl: "#",
-      githubUrl: "https://github.com/vi100t",
-      featured: true,
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Collaborative project management tool with real-time updates, team collaboration features, and intuitive drag-and-drop interface.",
-      image: "/placeholder.svg",
-      technologies: ["Vue.js", "Express.js", "MongoDB", "Socket.io", "Vuetify"],
-      liveUrl: "#",
-      githubUrl: "https://github.com/vi100t",
-      featured: false,
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "Beautiful weather application with location-based forecasts, interactive maps, and historical data visualization.",
-      image: "/placeholder.svg",
-      technologies: [
-        "React",
-        "TypeScript",
-        "Chart.js",
-        "Weather API",
-        "Styled Components",
-      ],
+      technologies: ["React Native", "Expo", "Supabase"],
       liveUrl: "#",
       githubUrl: "https://github.com/vi100t",
       featured: false,
@@ -146,7 +114,7 @@ const ProjectsSection = () => {
                       <Button
                         variant="outline"
                         asChild
-                        className="border-accent text-accent hover:bg-accent hover:text-primary"
+                        className="border-primary text-primary hover:bg-accent hover:border-accent hover:text-primary"
                       >
                         <a
                           href={project.githubUrl}
@@ -230,7 +198,7 @@ const ProjectsSection = () => {
                         size="sm"
                         variant="outline"
                         asChild
-                        className="border-accent text-accent hover:bg-accent hover:text-primary"
+                        className="border-primary text-primary hover:bg-accent hover:border-accent hover:text-primary"
                       >
                         <a
                           href={project.githubUrl}

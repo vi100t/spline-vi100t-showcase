@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Linkedin, Github, MapPin, Phone } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -28,16 +29,35 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await emailjs.send(
+        "service_83e6kjn", // Service ID
+        "template_coem128", // Template ID (please update if this is incorrect)
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "pcIcUs1GimnFQ5vd2", // Public Key
+      );
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
 
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description:
+          "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -223,10 +243,10 @@ const ContactSection = () => {
       </div>
 
       {/* Footer */}
-      <footer className="mt-20 pt-8 border-t border-border">
+      <footer className="mt-20 pt-8 border-t border-border px-4">
         <div className="text-center">
           <p className="text-white/80">
-            © 2024 Vicente. Built with React, TypeScript, and lots of ☕
+            © 2025 Vicente. Built with React, api keyTypeScript, and lots of ☕
           </p>
         </div>
       </footer>

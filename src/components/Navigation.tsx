@@ -78,7 +78,7 @@ const Navigation = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-foreground hover:text-accent transition-colors duration-200"
+                  className="text-left text-white/90 hover:text-accent transition-colors duration-200"
                 >
                   {item.label}
                 </button>
